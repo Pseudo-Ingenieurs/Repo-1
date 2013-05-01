@@ -7,7 +7,7 @@
     <groupId>fr.epsi.gl</groupId>
     <artifactId>quizz</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>org.jongo</groupId>
@@ -75,6 +75,11 @@
 		</dependency>
     </dependencies>
     <repositories>
+	<repository>
+		<id>maven-restlet</id>
+		<name>Restlet repository</name>
+		<url>http://maven.restlet.org</url>
+	</repository>
         <repository>
             <id>MongoLink</id>
             <url>http://repository-mongolink.forge.cloudbees.com/release/</url>
