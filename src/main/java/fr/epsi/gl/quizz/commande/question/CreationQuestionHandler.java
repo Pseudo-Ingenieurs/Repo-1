@@ -10,14 +10,14 @@ import java.util.UUID;
 @SuppressWarnings("UnusedDeclaration")
 public class CreationQuestionHandler implements HandlerCommande<CreationQuestionMessage> {
 
-    @Override
+   
     public UUID execute(CreationQuestionMessage commande) {
         Question question = new FabriqueQuestion().nouvelle(commande.libellé);
         Entrepots.questions().ajoute(question);
         return question.getId();
     }
 
-    @Override
+
     public Class<CreationQuestionMessage> typeCommande() {
         return CreationQuestionMessage.class;
     }

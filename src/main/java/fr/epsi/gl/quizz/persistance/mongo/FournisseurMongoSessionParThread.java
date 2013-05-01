@@ -13,12 +13,12 @@ public class FournisseurMongoSessionParThread implements FournisseurMongoSession
         this.sessionManager = sessionManager;
     }
 
-    @Override
+   
     public MongoSession get() {
         return sessions.get();
     }
 
-    @Override
+  
     public void nettoie() {
         sessions.get().stop();
         sessions.remove();

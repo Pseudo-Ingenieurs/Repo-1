@@ -23,14 +23,12 @@ public class BusCommandeTest {
     }
 
     private static class CreationQuestionCommandeHandlerCommande implements HandlerCommande<CreationQuestionMessage> {
-
-        @Override
+    
         public UUID execute(CreationQuestionMessage commande) {
             this.dernièreCommande = commande;
             return UUID.randomUUID();
         }
 
-        @Override
         public Class<CreationQuestionMessage> typeCommande() {
             return CreationQuestionMessage.class;
         }

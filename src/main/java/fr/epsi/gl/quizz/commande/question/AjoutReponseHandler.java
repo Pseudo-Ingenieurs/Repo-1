@@ -9,7 +9,7 @@ import static com.google.common.base.Preconditions.*;
 
 public class AjoutReponseHandler implements HandlerCommande<AjoutReponseMessage> {
 
-    @Override
+    
     public Object execute(AjoutReponseMessage commande) {
         Optional<Question> question = Entrepots.questions().get(commande.idQuestion);
         checkState(question.isPresent(), "Question inconnue");
@@ -21,7 +21,7 @@ public class AjoutReponseHandler implements HandlerCommande<AjoutReponseMessage>
         return null;
     }
 
-    @Override
+  
     public Class<AjoutReponseMessage> typeCommande() {
         return AjoutReponseMessage.class;
     }

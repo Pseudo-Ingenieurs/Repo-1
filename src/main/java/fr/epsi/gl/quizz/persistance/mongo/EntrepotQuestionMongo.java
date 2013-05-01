@@ -11,19 +11,16 @@ public class EntrepotQuestionMongo implements EntrepotQuestions {
         this.fournisseur = fournisseur;
     }
 
-    @Override
     public Optional<Question> get(Object id) {
         MongoSession session = fournisseur.get();
         return Optional.fromNullable(session.get(id, Question.class));
     }
 
-    @Override
     public Question ajoute(Question aggregat) {
         fournisseur.get().save(aggregat);
         return aggregat;
     }
 
-    @Override
     public void supprime(Question aggregat) {
         fournisseur.get().delete(aggregat);
     }

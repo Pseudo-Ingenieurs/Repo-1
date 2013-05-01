@@ -20,12 +20,12 @@ public class EntrepotQuestionMongoTest {
     @Before
     public void setUp()  {
         entrepot = new EntrepotQuestionMongo(new FournisseurMongoSession() {
-            @Override
+           
             public MongoSession get() {
                 return mongolinkRule.getCurrentSession();
             }
 
-            @Override
+        
             public void nettoie() {
 
             }
