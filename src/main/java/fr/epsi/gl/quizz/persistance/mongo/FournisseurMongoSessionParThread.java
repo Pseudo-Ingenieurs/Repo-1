@@ -13,19 +13,16 @@ public class FournisseurMongoSessionParThread implements FournisseurMongoSession
         this.sessionManager = sessionManager;
     }
 
-   
     public MongoSession get() {
         return sessions.get();
     }
 
-  
     public void nettoie() {
         sessions.get().stop();
         sessions.remove();
     }
 
     private final ThreadLocal<MongoSession> sessions = new ThreadLocal<MongoSession>() {
-        @Override
         protected MongoSession initialValue() {
             MongoSession session = sessionManager.createSession();
             session.start();

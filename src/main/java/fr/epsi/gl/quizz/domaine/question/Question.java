@@ -17,7 +17,6 @@ public class Question implements Aggregat{
         this.id = id;
     }
 
-  
     public UUID getId() {
         return id;
     }

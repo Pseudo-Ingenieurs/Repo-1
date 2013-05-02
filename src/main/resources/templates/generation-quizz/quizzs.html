@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Toutes les questions</title>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet"/>
     <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/slate/bootstrap.min.css" rel="stylesheet"/>
@@ -24,19 +22,18 @@
 <div class="container">
     <div class="row-fluid">
         <div class="span12">
-            <h1>Toutes les questions</h1>
-            <table class="table">
+            <h1>Tous les quizzs</h1>
+             <table class="table">
                 <tr>
                     <th>Libellé</th>
                 </tr>
-                <tr th:each="question : ${questions}">
-                    <td><a href="" th:href="'/questions/' + ${question.id}" th:text="${question.libellé}">Libellé</a>
+                <tr th:each="quizz : ${quizzs}">
+                    <td><a href="" th:href="'/quizzs/' + ${quizz.id}" th:text="${quizz.libellé}">Libellé</a>
                     </td>
                 </tr>
             </table>
-        </div>
+         </div>
     </div>
 </div>
-
 </body>
 </html>

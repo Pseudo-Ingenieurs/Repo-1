@@ -24,19 +24,29 @@
 <div class="container">
     <div class="row-fluid">
         <div class="span12">
-            <h1>Toutes les questions</h1>
+            <h1>Generation d'un quizz</h1>
             <table class="table">
                 <tr>
                     <th>Libellé</th>
+                    <th>Choisir</th>
                 </tr>
                 <tr th:each="question : ${questions}">
                     <td><a href="" th:href="'/questions/' + ${question.id}" th:text="${question.libellé}">Libellé</a>
+                    <th> 
+                    <input type="checkbox" name="generer" value="oui"></input>
+                    </th>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
-
+<div class="container">
+<form action="/generate" method="get">
+	<label for="libelle">Libellé</label>
+    <input type="text" required="true" id="libelle" name="libelle"/>
+	<button type="submit" class="btn">Generer !</button>
+</form>
+</div>
 </body>
 </html>

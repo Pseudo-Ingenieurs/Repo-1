@@ -23,7 +23,7 @@ public class BusCommandeTest {
     }
 
     private static class CreationQuestionCommandeHandlerCommande implements HandlerCommande<CreationQuestionMessage> {
-    
+
         public UUID execute(CreationQuestionMessage commande) {
             this.dernièreCommande = commande;
             return UUID.randomUUID();

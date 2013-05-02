@@ -8,7 +8,6 @@ import fr.epsi.gl.quizz.domaine.question.Question;
 import java.util.List;
 
 public class FakeEntrepotQuestions implements EntrepotQuestions {
-    
     public Optional<Question> get(Object id) {
         for (Question question : questions) {
             if(question.getId().equals(id)) {
@@ -18,13 +17,11 @@ public class FakeEntrepotQuestions implements EntrepotQuestions {
         return Optional.absent();
     }
 
-
     public Question ajoute(Question aggregat) {
         questions.add(aggregat);
         return aggregat;
     }
 
-   
     public void supprime(Question aggregat) {
         questions.remove(aggregat);
     }

@@ -7,6 +7,7 @@ import fr.epsi.gl.quizz.domaine.question.Question;
 import org.mongolink.MongoSession;
 
 public class EntrepotQuestionMongo implements EntrepotQuestions {
+	
     public EntrepotQuestionMongo(FournisseurMongoSession fournisseur) {
         this.fournisseur = fournisseur;
     }
