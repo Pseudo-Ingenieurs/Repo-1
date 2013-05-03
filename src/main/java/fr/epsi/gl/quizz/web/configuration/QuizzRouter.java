@@ -23,11 +23,12 @@ public class QuizzRouter extends Router {
     private void attacheRoutes() {
         attach("/", AccueilRessource.class);
         attach("/nouvelle-question", NouvelleQuestionRessource.class);
-        attach("/questions", QuestionsRessource.class);
-        attach("/questions/{id}", QuestionRessource.class);
         attach("/generer-quizz", GenererQuizzRessource.class);
-        attach("/generate", GenerateQuizzRessource.class);
+        attach("/questions", QuestionsRessource.class);
         attach("/quizzs", QuizzsRessource.class);
+        attach("/questions/{id}", QuestionRessource.class);
+        attach("/quizzs/{id}", QuizzRessource.class); 
+        
     }
 
     @Override

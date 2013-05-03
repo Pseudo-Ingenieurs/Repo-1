@@ -42,11 +42,25 @@
     </div>
 </div>
 <div class="container">
-<form action="/generate" method="get">
+<form action="/quizzs" method="post">
 	<label for="libelle">Libellé</label>
     <input type="text" required="true" id="libelle" name="libelle"/>
 	<button type="submit" class="btn">Generer !</button>
 </form>
 </div>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("form").submit(function (event) {
+            console.log("yaa");
+            var formulaire = $(this);
+            $.post(formulaire.attr("action"), formulaire.serialize(), function (data, textStatus, jqXhr) {
+                window.location = jqXhr.getResponseHeader("Location");
+
+            });
+            return false;
+        });
+    });
+</script>
 </body>
 </html>
