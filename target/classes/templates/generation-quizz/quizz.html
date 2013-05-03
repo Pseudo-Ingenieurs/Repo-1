@@ -1,0 +1,49 @@
+<html lang="fr">
+<head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/slate/bootstrap.min.css" rel="stylesheet"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <ul class="nav">
+            <li><a href="/questions">Voir toutes les questions</a></li>
+            <li><a href="/nouvelle-question">Créer une nouvelle question</a></li>
+            <li><a href="/generer-quizz">Generer un quizz</a></li>
+            <li><a href="/quizzs">Voir tout les quizzs</a></li>
+        </ul>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span12">
+            <h1>Quizz</h1>
+            <h2 th:text="${quizz.libellé}">Libellé</h2>
+
+            <div class="row-fluid">
+                <div class="span6">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Libellé</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="question : ${quizz.questions}">
+                            <td th:text="${question.libellé}">Libellé</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
