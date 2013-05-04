@@ -13,7 +13,7 @@
       <init-param>
             <!-- Application class name -->
             <param-name>org.restlet.application</param-name>
-            <param-value>fr.epsi.gl.quizz.web.QuizzApplication</param-value>
+            <param-value>fr.epsi.gl.quizz.web.configuration.FabriqueApplication</param-value>
       </init-param>
    </servlet>  
 
