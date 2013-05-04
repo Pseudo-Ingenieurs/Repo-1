@@ -9,7 +9,8 @@ public class Main {
     public static void main(String[] args)  {
         Component component = new Component();
         component.getServers().add(Protocol.HTTP, 8080);
-        component.getDefaultHost().attach(new FabriqueApplication().configure());
+       // component.getDefaultHost().attach(new FabriqueApplication().configure());
+	   component.getDefaultHost().attach("/quizz", new QuizzApplication());
         try {
             component.start();
         } catch (Exception e) {
