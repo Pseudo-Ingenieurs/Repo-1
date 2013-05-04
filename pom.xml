@@ -78,7 +78,7 @@
 		   <version>2.0.0</version>
 		</dependency>
 		<dependency>  
-		   <groupId>org.restlet.jse</groupId>  
+		   <groupId>org.restlet.ext</groupId>  
 		   <artifactId>org.restlet.ext.servlet</artifactId>  
 		   <version>2.0.M3</version> 
 		</dependency>
