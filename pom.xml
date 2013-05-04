@@ -71,13 +71,11 @@
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet</artifactId>
             <version>2.1.1</version>
-			<systemPath>${basedir}/WEB-INF/lib/org.restlet.jar</systemPath>
         </dependency>
 		<dependency>  
 		   <groupId>org.restlet.jse</groupId>  
 		   <artifactId>org.restlet.ext.servlet</artifactId>  
 		   <version>2.1.1</version> 
-		   <systemPath>${basedir}/WEB-INF/lib/org.restlet.ext.servlet.jar</systemPath>
 		</dependency>
         <dependency>
             <groupId>org.thymeleaf</groupId>
