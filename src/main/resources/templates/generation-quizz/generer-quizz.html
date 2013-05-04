@@ -33,7 +33,7 @@
                 <tr th:each="question : ${questions}">
                     <td><a href="" th:href="'/questions/' + ${question.id}" th:text="${question.libellé}">Libellé</a>
                     <th> 
-                    <input type="checkbox" name="generer" value="oui"></input>
+                    <input type="checkbox" th:id="${question.id}" name="generer" value="oui"></input>
                     </th>
                     </td>
                 </tr>

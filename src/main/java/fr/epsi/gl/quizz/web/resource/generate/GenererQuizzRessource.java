@@ -33,13 +33,6 @@ public class GenererQuizzRessource extends ServerResource{
 	        return ModeleEtVue.crée("/generation-quizz/generer-quizz").avec("questions", recherche.toutes());
 	    }
 	 
-	 @Post
-	    public void crée(Form formulaire) {
-	        CreationQuizzMessage commande = new CreationQuizzMessage(formulaire.getFirstValue("libelle"));
-	        ListenableFuture<UUID> idQuizz = busCommande.envoie(commande);
-	        setStatus(Status.SUCCESS_ACCEPTED);
-	        setLocationRef("/quizzs/" + Futures.getUnchecked(idQuizz));
-	    }
 
 	 private BusCommande busCommande;
 	 private RechercheQuestions recherche;
