@@ -40,7 +40,7 @@ public class EntrepotQuizzMongoTest {
 	        });
 	    }
 	    
-	  /*  @Test
+	    @Test
 	    public void peutAjouterUnQuizz() {
 
 	    	
@@ -52,6 +52,6 @@ public class EntrepotQuizzMongoTest {
 	        Quizz quizzTrouvée = entrepot.get(quizz.getId()).orNull();
 	        assertThat(quizzTrouvée).isNotNull();
 	        assertThat(quizzTrouvée.getLibellé()).isEqualTo("test");
-	    }*/
+	    }
 	    
 }

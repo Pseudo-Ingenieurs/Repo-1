@@ -3,17 +3,11 @@ package fr.epsi.gl.quizz.requete.question;
 import com.google.common.collect.Lists;
 import org.jongo.marshall.jackson.oid.Id;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class DetailsQuestion implements Serializable{
+public class DetailsQuestion {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 6808755413156456741L;
-
-	public String getLibellé() {
+    public String getLibellé() {
         return libellé;
     }
 

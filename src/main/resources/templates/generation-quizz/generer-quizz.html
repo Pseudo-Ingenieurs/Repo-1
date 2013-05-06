@@ -8,10 +8,6 @@
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<applet id="javaToJavascriptApplet" code="fr.epsi.gl.quizz.web.resource.generate.QuizzRessource.class" 
-  width="0" height="0" codebase="bin/"> </applet>
-
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <ul class="nav">
@@ -28,13 +24,7 @@
 <div class="container">
     <div class="row-fluid">
         <div class="span12">
-            
-        </div>
-    </div>
-</div>
-<div class="container">
-<form id="gen_quizz" action="/quizzs" method="post">
-	<h1>Generation d'un quizz</h1>
+            <h1>Generation d'un quizz</h1>
             <table class="table">
                 <tr>
                     <th>Libellé</th>
@@ -43,11 +33,16 @@
                 <tr th:each="question : ${questions}">
                     <td><a href="" th:href="'/questions/' + ${question.id}" th:text="${question.libellé}">Libellé</a>
                     <th> 
-                    <input type="checkbox" th:id="${question.id}" form="gen_quizz" name="aquestion" th:value="${question.id}" checked="true"></input>
+                    <input type="checkbox" name="generer" value="oui"></input>
                     </th>
                     </td>
                 </tr>
             </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+<form action="/quizzs" method="post">
 	<label for="libelle">Libellé</label>
     <input type="text" required="true" id="libelle" name="libelle"/>
 	<button type="submit" class="btn">Generer !</button>
@@ -66,7 +61,6 @@
             return false;
         });
     });
-
 </script>
 </body>
 </html>

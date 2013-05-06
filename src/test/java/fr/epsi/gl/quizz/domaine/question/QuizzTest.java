@@ -12,7 +12,7 @@ public class QuizzTest {
 	
 	
 	
-	/*@Test
+	@Test
 	public void peutDonnerUnId(){
 		Quizz q = unQuizz();
 		
@@ -30,5 +30,5 @@ public class QuizzTest {
 	
 	private Quizz unQuizz() {
 		return new FabriqueQuizzs().nouveau("test quizz");
-	}*/
+	}
 }

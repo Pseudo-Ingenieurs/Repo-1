@@ -20,7 +20,7 @@
 <br/>
 <br/>
 <br/>
-<div class="container" id="container">
+<div class="container">
     <div class="row-fluid">
         <div class="span12">
             <h1>Quizz</h1>
@@ -45,21 +45,5 @@
         </div>
     </div>
 </div>
-<div class="container">
-<input name="b_print" type="button" onclick="printdiv('container');" value=" Impression " />
-</div>
-<script language="javascript" type="text/javascript">
-    function printdiv(divID)
-    {
-      var headstr = "<html><head><title></title></head><body>";
-      var footstr = "</body></html>";
-      var newstr = document.all.item(divID).innerHTML;
-      var oldstr = document.body.innerHTML;
-      document.body.innerHTML = headstr+newstr+footstr;
-      window.print();
-      document.body.innerHTML = oldstr;
-      return false;
-    }
-</script>
 </body>
 </html>
