@@ -11,7 +11,7 @@ import fr.epsi.gl.quizz.domaine.generate.Quizz;
 public class CreationQuizzHandler implements HandlerCommande<CreationQuizzMessage>{
 
 	public UUID execute(CreationQuizzMessage commande) {
-		Quizz quizz = new FabriqueQuizzs().nouveau(commande.libellé);
+		Quizz quizz = new FabriqueQuizzs().nouveau(commande.libellé,commande.questions);
 		Entrepots.quizzs().ajoute(quizz);
 		return quizz.getId();
 	}

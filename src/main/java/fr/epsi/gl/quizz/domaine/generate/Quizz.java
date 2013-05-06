@@ -8,10 +8,11 @@ import com.google.common.collect.Lists;
 
 import fr.epsi.gl.quizz.domaine.Aggregat;
 import fr.epsi.gl.quizz.domaine.question.Question;
+import fr.epsi.gl.quizz.requete.question.DetailsQuestion;
 
 public class Quizz implements Aggregat{
 
-    private List<Question> questions = Lists.newArrayList();
+    private List<DetailsQuestion> questions = Lists.newArrayList();
     private String libellé;
 	private UUID id;
 	
@@ -31,12 +32,16 @@ public class Quizz implements Aggregat{
 	        return libellé;
 	}
 	
-	public List<Question> getQuestions() {
+	public List<DetailsQuestion> getQuestions() {
         return Collections.unmodifiableList(questions);
     }
 
 	public void setLibellé(String libellé) {
 		this.libellé = libellé;		
+	}
+	public void setQuestions(List<DetailsQuestion> questions) {
+		// TODO Auto-generated method stub
+		this.questions=questions;
 	}
 				
 		

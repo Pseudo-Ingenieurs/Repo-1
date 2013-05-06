@@ -6,15 +6,16 @@ import com.google.common.collect.Lists;
 
 import fr.epsi.gl.quizz.commande.Message;
 import fr.epsi.gl.quizz.domaine.question.Question;
+import fr.epsi.gl.quizz.requete.question.DetailsQuestion;
 
 public class CreationQuizzMessage implements Message{
 
 	 public final String libellé;
-	 public List<Question> questions = Lists.newArrayList();
+	 public List<DetailsQuestion> questions = Lists.newArrayList();
 	 
-	public CreationQuizzMessage(String libellé,List<Question> questions) {
+	public CreationQuizzMessage(String libellé,List<DetailsQuestion> questions2) {
 	        this.libellé = libellé;
-	        this.questions=questions;
+	        this.questions=questions2;
 	 }
 	  
 }
