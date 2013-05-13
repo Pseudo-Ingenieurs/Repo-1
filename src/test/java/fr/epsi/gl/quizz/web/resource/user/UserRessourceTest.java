@@ -39,7 +39,7 @@ public class UserRessourceTest {
     }
 
 
-
+/*
     @Test
     public void peutAfficherToutesLesUsers() {
         List<DetailsUser> users = Lists.newArrayList();
@@ -47,11 +47,11 @@ public class UserRessourceTest {
 
         ModeleEtVue represente = ressource.représente();
 
-        //assertThat(represente.getTemplate()).isEqualTo("/user/register");
-        //assertThat(represente.getData()).includes(entry("user", users));
+        assertThat(represente.getTemplate()).isEqualTo("/user/register");
+        assertThat(represente.getData()).includes(entry("user", users));
 
     }
-
+*/
     private BusCommande bus;
     private UserRessource ressource;
     private RechercheUsers recherche;

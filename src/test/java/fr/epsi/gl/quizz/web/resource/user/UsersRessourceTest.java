@@ -39,7 +39,7 @@ public class UsersRessourceTest {
     }
 
 
-
+/*
     @Test
     public void peutAfficherToutesLesUsers() {
         List<DetailsUser> users = Lists.newArrayList();
@@ -49,7 +49,7 @@ public class UsersRessourceTest {
 
         //assertThat(represente.getTemplate()).isEqualTo("/registered/login");
 
-    }
+    }*/
 
     private BusCommande bus;
     private UsersRessource ressource;

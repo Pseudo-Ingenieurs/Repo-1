@@ -49,7 +49,7 @@ public class RechercheUserTest {
 
         assertThat(details).isNotNull();
         assertThat(details.getLogin()).isEqualTo("toto");
-        assertThat(details.getMotdepasse()).isEqualTo("secret");
+
     }
 
     private Jongo jongo;
