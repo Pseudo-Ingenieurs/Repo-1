@@ -38,6 +38,10 @@ public class Quizz implements Aggregat{
 	public void setLibellé(String libellé) {
 		this.libellé = libellé;		
 	}
+	public void setQuestions(List<Question> questions) {
+
+		this.questions=questions;
+	}
 				
 		
 }

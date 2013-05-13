@@ -3,6 +3,7 @@ package fr.epsi.gl.quizz.persistance.mongo;
 import static org.fest.assertions.Assertions.assertThat;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -43,8 +44,10 @@ public class EntrepotQuizzMongoTest {
 	    @Test
 	    public void peutAjouterUnQuizz() {
 
-	    	
-	        Quizz quizz = new FabriqueQuizzs().nouveau("test");
+	    	Question question = new Question(UUID.randomUUID());
+	    	question.setLibellé("A+B ?");
+	    	questions.add(question);
+	        Quizz quizz = new FabriqueQuizzs().nouveau("test", questions);
 
 	        entrepot.ajoute(quizz);
 	        mongolinkRule.cleanSession();

@@ -17,25 +17,26 @@ import java.util.UUID;
 
 public class QuestionsRessource extends ServerResource{
 
-    @Inject
-    public QuestionsRessource(BusCommande busCommande, RechercheQuestions recherche) {
-        this.busCommande = busCommande;
-        this.recherche = recherche;
-    }
+	private BusCommande busCommande;
+	private RechercheQuestions recherche;
+	
+	@Inject
+	public QuestionsRessource(BusCommande busCommande, RechercheQuestions recherche) {
+		this.busCommande = busCommande;
+		this.recherche = recherche;
+	}
 
-    @Get
-    public ModeleEtVue represente() {
-        return ModeleEtVue.crée("/question/questions").avec("questions", recherche.toutes());
-    }
+	@Get
+	public ModeleEtVue represente() {
+		return ModeleEtVue.crée("/question/questions").avec("questions", recherche.toutes());
+	}
 
-    @Post
-    public void crée(Form formulaire) {
-        CreationQuestionMessage commande = new CreationQuestionMessage(formulaire.getFirstValue("libelle"));
-        ListenableFuture<UUID> idQuestion = busCommande.envoie(commande);
-        setStatus(Status.SUCCESS_ACCEPTED);
-        setLocationRef("/questions/" + Futures.getUnchecked(idQuestion));
-    }
+	@Post
+	public void crée(Form formulaire) {
+		CreationQuestionMessage commande = new CreationQuestionMessage(formulaire.getFirstValue("libelle"));
+		ListenableFuture<UUID> idQuestion = busCommande.envoie(commande);
+		setStatus(Status.SUCCESS_ACCEPTED);
+		setLocationRef("/questions/" + Futures.getUnchecked(idQuestion));
+	}
 
-    private BusCommande busCommande;
-    private RechercheQuestions recherche;
 }

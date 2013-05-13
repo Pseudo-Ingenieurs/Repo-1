@@ -13,7 +13,7 @@ public class Question implements Aggregat{
     protected Question() {
     }
 
-    Question(UUID id) {
+    public Question(UUID id) {
         this.id = id;
     }
 

@@ -5,6 +5,7 @@ import fr.epsi.gl.quizz.commande.FournisseurMongoSession;
 import fr.epsi.gl.quizz.domaine.Entrepots;
 import fr.epsi.gl.quizz.domaine.generate.EntrepotQuizzs;
 import fr.epsi.gl.quizz.domaine.question.EntrepotQuestions;
+import fr.epsi.gl.quizz.domaine.user.EntrepotUsers;
 
 public class EntrepotsMongo extends Entrepots {
 
@@ -23,5 +24,9 @@ public class EntrepotsMongo extends Entrepots {
     	return new EntrepotQuizzMongo(fournisseur);
     }
     
+    @Override 
+    protected EntrepotUsers entrepotUsers(){
+    	return new EntrepotUserMongo(fournisseur);
+    }
     private FournisseurMongoSession fournisseur;
 }

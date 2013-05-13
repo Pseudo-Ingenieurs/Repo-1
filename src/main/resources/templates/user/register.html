@@ -1,0 +1,35 @@
+<html lang="fr">
+<head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/slate/bootstrap.min.css" rel="stylesheet"/>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <ul class="nav">
+            <li><a href="/questions">Voir toutes les questions</a></li>
+            <li><a href="/nouvelle-question">Créer une nouvelle question</a></li>
+            <li><a href="/generer-quizz">Generer un quizz</a></li>
+            <li><a href="/quizzs">Voir tout les quizzs</a></li>
+        </ul>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span12">
+        <p>Bienvenue</p>
+        <p th:text="${user.login}">boom</p>
+        <p> Redirection vers l'accueil ...</p>
+        </div>
+    </div>
+</div>
+<SCRIPT>
+setTimeout('top.location.href="/"',"3000")
+</SCRIPT>
+</body>
+</html>

@@ -8,6 +8,7 @@ import static org.fest.assertions.Assertions.*;
 
 public class HelloResourceTest {
 
+
     @Test
     public void ditbienHello() {
         ModeleEtVue coucou = new AccueilRessource().hello();

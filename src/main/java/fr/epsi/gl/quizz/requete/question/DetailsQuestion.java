@@ -5,9 +5,9 @@ import org.jongo.marshall.jackson.oid.Id;
 
 import java.util.List;
 
-public class DetailsQuestion {
+public class DetailsQuestion{
 
-    public String getLibellé() {
+	public String getLibellé() {
         return libellé;
     }
 

@@ -7,6 +7,47 @@
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '534797699899674', // App ID
+    //channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File (?)
+    status     : true, // verifie le login
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML (pour recupérer les données de FB.response
+  });
+    
+  FB.Event.subscribe('auth.authResponseChange', function(response) {
+    if (response.status === 'connected') {
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      FB.login();
+    } else {
+      FB.login();
+    }
+  });
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js";//url du sdk
+   ref.parentNode.insertBefore(js, ref);
+  }(document));
+
+  function test2API() {
+    //console.log('Bienvenue! Peuple les infos... ');
+    //FB.api('/me', function(response) {
+     // alert('Salut, ' + response.name + '!');
+    //});
+  }
+  
+  //alert("test1Basique");
+
+</script>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <ul class="nav">
@@ -20,30 +61,53 @@
 <br/>
 <br/>
 <br/>
-<div class="container">
+<div class="container" id="container">
     <div class="row-fluid">
         <div class="span12">
-            <h1>Quizz</h1>
-            <h2 th:text="${quizz.libellé}">Libellé</h2>
-
+        <div style="float: right;  margin-right: 20px;">
+        	<fb:like send="true" width="450" show_faces="true"></fb:like>
+        </div>
+ 		    <h1 th:text="${quizz.libellé}">Libellé</h1> 		     
             <div class="row-fluid">
                 <div class="span6">
                     <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Libellé</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                         <tbody>
                         <tr th:each="question : ${quizz.questions}">
-                            <td th:text="${question.libellé}">Libellé</td>
-                        </tr>
+                            <td><a href="" th:href="'../questions/' + ${question.id}" th:text="${question.libellé}">Libellé</a>
+                            </td>
+                            <tr th:each="reponses : ${question.réponses}">
+                      		   <td th:text="${reponses.libellé}">Libellé</td>
+                       		 </tr>                 
+                        </tr>                        
                         </tbody>
+                        
                     </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="container">
+<input name="b_print" type="button" onclick="printdiv('container');" value=" Impression " />
+</div>
+<script language="javascript" type="text/javascript">
+    function printdiv(divID)
+    {
+      var oldstr = document.body.innerHTML;
+      
+      $("container").removeAttr("style")
+      var headstr = "<html><head><title></title></head><body>";
+      var newstr = document.all.item(divID).innerHTML;
+      var footstr = "</body></html>";
+         
+      
+      document.body.innerHTML = headstr+newstr+footstr;
+      
+      window.print();
+      document.body.innerHTML = oldstr;
+      
+      return false;
+    }
+</script>
 </body>
 </html>
