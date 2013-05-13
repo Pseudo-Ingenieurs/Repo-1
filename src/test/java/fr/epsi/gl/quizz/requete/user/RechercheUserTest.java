@@ -38,6 +38,7 @@ public class RechercheUserTest {
         assertThat(users).hasSize(1);
         assertThat(users.get(0).getLogin()).isEqualTo("test");
     }
+    /*
 
     @Test
     public void peutRécupérerUnUser() {
@@ -52,6 +53,7 @@ public class RechercheUserTest {
 
     }
 
+*/
     private Jongo jongo;
     private Fongo fongo;
 }
