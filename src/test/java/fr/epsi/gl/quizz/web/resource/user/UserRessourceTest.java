@@ -28,16 +28,16 @@ import fr.epsi.gl.quizz.web.representation.ModeleEtVue;
 import fr.epsi.gl.quizz.web.resource.RessourceHelper;
 
 public class UserRessourceTest {
-
+/*
 	@Before
     public void setUp() throws Exception {
-       /* bus = mock(BusCommande.class);
+        bus = mock(BusCommande.class);
         when(bus.envoie(any(Message.class))).thenReturn(Futures.<Object>immediateFuture(UUID.randomUUID()));
         recherche = mock(RechercheUsers.class);
         ressource = new UserRessource(bus, recherche);
-        RessourceHelper.initialise(ressource);*/
+        RessourceHelper.initialise(ressource);
     }
-
+*/
 
 /*
     @Test
