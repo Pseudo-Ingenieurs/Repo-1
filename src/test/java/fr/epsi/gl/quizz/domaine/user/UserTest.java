@@ -40,7 +40,7 @@ public class UserTest {
 	public void peutDonnerUnEMail(){
 		
 		User u = new FabriqueUser().nouveau("toto","secret","email@epsi.fr", "12");
-		assertThat(u.getAge()).isEqualTo("email@epsi.fr");
+		assertThat(u.getMail()).isEqualTo("email@epsi.fr");
 	}
 	
 	@Test

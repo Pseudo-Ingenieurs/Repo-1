@@ -21,6 +21,7 @@ import com.google.common.util.concurrent.Futures;
 import fr.epsi.gl.quizz.commande.BusCommande;
 import fr.epsi.gl.quizz.commande.Message;
 import fr.epsi.gl.quizz.commande.question.CreationQuestionMessage;
+import fr.epsi.gl.quizz.commande.user.CreationUserMessage;
 import fr.epsi.gl.quizz.requete.user.DetailsUser;
 import fr.epsi.gl.quizz.requete.user.RechercheUsers;
 import fr.epsi.gl.quizz.web.representation.ModeleEtVue;
@@ -40,14 +41,14 @@ public class UserRessourceTest {
     @Test
     public void peutCréerUnUser() {
         Form formulaire = new Form();
-        formulaire.add("libellé", "C'est mon login");
+        formulaire.add("login", "C'est mon login");
 
         ressource.crée(formulaire);
 
-        ArgumentCaptor<CreationQuestionMessage> capteur = ArgumentCaptor.forClass(CreationQuestionMessage.class);
+        ArgumentCaptor<CreationUserMessage> capteur = ArgumentCaptor.forClass(CreationUserMessage.class);
         verify(bus).envoie(capteur.capture());
-        CreationQuestionMessage commande = capteur.getValue();
-        assertThat(commande.libellé).isEqualTo("C'est mon login");
+        CreationUserMessage commande = capteur.getValue();
+        assertThat(commande.login).isEqualTo("C'est mon login");
     }
 
 

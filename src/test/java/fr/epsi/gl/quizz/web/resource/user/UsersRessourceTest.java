@@ -21,6 +21,7 @@ import com.google.common.util.concurrent.Futures;
 import fr.epsi.gl.quizz.commande.BusCommande;
 import fr.epsi.gl.quizz.commande.Message;
 import fr.epsi.gl.quizz.commande.question.CreationQuestionMessage;
+import fr.epsi.gl.quizz.commande.users.CreationUsersMessage;
 import fr.epsi.gl.quizz.requete.user.DetailsUser;
 import fr.epsi.gl.quizz.requete.user.RechercheUsers;
 import fr.epsi.gl.quizz.web.representation.ModeleEtVue;
@@ -44,10 +45,11 @@ public class UsersRessourceTest {
 
         ressource.crée(formulaire);
 
-        ArgumentCaptor<CreationQuestionMessage> capteur = ArgumentCaptor.forClass(CreationQuestionMessage.class);
+        ArgumentCaptor<CreationUsersMessage> capteur = ArgumentCaptor.forClass(CreationUsersMessage.class);
         verify(bus).envoie(capteur.capture());
-        CreationQuestionMessage commande = capteur.getValue();
-        assertThat(commande.libellé).isEqualTo("C'est mon login");
+        CreationUsersMessage commande = capteur.getValue();
+
+        assertThat(commande.login).isEqualTo("C'est mon login");
     }
 
 
@@ -60,7 +62,6 @@ public class UsersRessourceTest {
         ModeleEtVue represente = ressource.représente();
 
         assertThat(represente.getTemplate()).isEqualTo("/registered/login");
-        assertThat(represente.getData()).includes(entry("login", users));
 
     }
 

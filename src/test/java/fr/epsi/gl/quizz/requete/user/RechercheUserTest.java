@@ -42,7 +42,7 @@ public class RechercheUserTest {
     @Test
     public void peutRécupérerUnUser() {
         UUID id = UUID.randomUUID();
-        jongo.getCollection("user").insert("{_id: #, login : 'toto', mdp : 'secret'}");
+        jongo.getCollection("user").insert("{_id: #, login : 'toto'}");
         RechercheUser recherche = new RechercheUser(jongo);
 
         DetailsUsers details = recherche.detailsDe(id);
